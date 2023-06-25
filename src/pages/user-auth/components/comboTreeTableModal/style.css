@@ -1,0 +1,23 @@
+.opt-icon {
+  font-size: 200% !important;
+}
+.combo-tree-sel-area {
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.combo-tree-sel {
+  width: 70%;
+}
+.modal-user-auth-tree {
+  max-height: 390px;
+  padding: 10px 20px;
+}
+.restore, .submit {
+  margin-right: 14px;
+}
+.btn-area {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}

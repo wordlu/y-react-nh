@@ -1,0 +1,19 @@
+.poll-content-modal {
+  font-size: 12px !important;
+}
+
+.poll-content-modal label {
+  font-size: 12px !important;
+}
+
+.poll-content-modal .ant-select-selection-placeholder {
+  font-size: 12px !important;
+}
+
+.poll-content-modal .ant-form-item{
+  margin-bottom: 15px !important;
+}
+
+.poll-content-modal .ant-select-selection-item-content{
+  font-size: 12px;
+}

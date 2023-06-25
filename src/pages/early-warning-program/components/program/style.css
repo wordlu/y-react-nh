@@ -1,0 +1,60 @@
+.sel-input-area {
+  margin-right: 0 !important;
+}
+
+.sel-bool {
+  width: 80px !important;
+}
+
+.input-height {
+  height: 32px;
+  width: 100px !important;
+  display: flex;
+  align-items: center;
+}
+
+.number-determination {
+  margin: 20px;
+}
+
+.implied-rating {
+  margin-right: 60px !important;
+}
+
+.table-opt-area {
+  margin-bottom: 20px;
+}
+
+.program-form-item-required::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: '*';
+}
+
+.cwzb-tab {
+  /* width: 300px; */
+}
+.cwzb-tab .cwzb-form-title {
+  width: 300px;
+  max-width: 300px;
+}
+
+.cwzb-tab .cwzb-form {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  /* width: 50%; */
+}
+
+.cwzb-form .ant-form-item-control-input {
+  padding: 0 10px !important;
+}
+
+.cwzb-form .ant-input, .cwzb-form .ant-input-number {
+  width: 300px !important;
+}

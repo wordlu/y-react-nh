@@ -1,0 +1,36 @@
+/* * {
+  font-size: 12px !important;
+} */
+
+.early-warning-details-form-search .ant-picker{
+  width: 100%;
+}
+
+.early-warning-details-form-search .ant-form-item-label>label{
+  font-size: 12px !important;
+}
+
+.early-warning-details-form-search .ant-picker-input > input{
+  font-size: 12px !important;
+}
+
+.early-warning-details-form-search .ant-form-item-explain-error{
+  font-size: 12px !important;
+}
+
+.early-warning-details-form-search .ant-select{
+  font-size: 12px !important;
+}
+
+.early-warning-details-form-search .ant-form-item{
+  margin-top: 2px !important;
+  margin-bottom: 5px !important;
+}
+
+.early-warning-details-form-search .ant-form-item-with-help .ant-form-item-explain{
+  min-height: auto !important;
+}
+
+.early-warning-details-form-search .ant-picker{
+  min-height: 32px !important;
+}

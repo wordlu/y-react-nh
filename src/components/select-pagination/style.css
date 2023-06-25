@@ -1,0 +1,18 @@
+.select-pagination {
+  font-size: 12px;
+}
+
+.select-pagination .ant-pagination-simple-pager input {
+  width: 30px;
+}
+
+/* .rc-virtual-list {
+  height: 250px;
+} */
+
+.select-page-dropdown #mainName_list {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}

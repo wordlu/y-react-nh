@@ -1,0 +1,28 @@
+/* * {
+  font-size: 12px !important;
+} */
+
+.dict-form-search .ant-form-item-label>label{
+  font-size: 12px !important;
+}
+
+.dict-form-search .ant-select{
+  font-size: 12px !important;
+}
+
+.dict-form-search .ant-form-item{
+  margin-top: 2px !important;
+  margin-bottom: 5px !important;
+}
+.dict-form-search {
+  width: 500px;
+  display: flex;
+  /* align-items: center; */
+}
+.dic-sel {
+  width: 260px !important;
+  margin-right: 20px !important;
+}
+.search-btn {
+  margin-top: 2px;
+}

@@ -1,0 +1,7 @@
+.row-div {
+  display: flex;
+}
+
+.row-div .ant-form-item {
+  width: 50%;
+}

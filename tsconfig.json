@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "es2020",
+    "declaration": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "target": "es6",
+    "outDir": "dist",
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["esnext", "dom"],
+    "types": ["jest", "reflect-metadata"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["dist"],
+  "include": ["src"]
+}

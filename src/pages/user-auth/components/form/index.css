@@ -1,0 +1,36 @@
+/* * {
+  font-size: 12px !important;
+} */
+
+.user-auth-form .ant-picker{
+  width: 100%;
+}
+
+.user-auth-form .ant-form-item-label>label{
+  font-size: 12px !important;
+}
+
+.user-auth-form .ant-picker-input > input{
+  font-size: 12px !important;
+}
+
+.user-auth-form .ant-form-item-explain-error{
+  font-size: 12px !important;
+}
+
+.user-auth-form .ant-select, .user-auth-form .ant-input{
+  font-size: 12px !important;
+}
+
+.user-auth-form .ant-form-item{
+  margin-top: 2px !important;
+  margin-bottom: 5px !important;
+}
+
+.user-auth-form .ant-form-item-with-help .ant-form-item-explain{
+  min-height: auto !important;
+}
+
+.user-auth-form .ant-picker{
+  min-height: 32px !important;
+}

@@ -1,0 +1,24 @@
+# pack-refs with: peeled fully-peeled sorted 
+81b3000e2c73b5cf72da4d15f72d4146e2d409bd refs/heads/master
+9915a8da972ab2007bebf84322cbffa0718238f2 refs/heads/release
+9915a8da972ab2007bebf84322cbffa0718238f2 refs/heads/release-zl
+64653b220ea809b1a45a253811539fe593de87a9 refs/heads/release-zl-1125
+829315ff03378d850220f6b4f8e58e9ebb85b614 refs/heads/release-zl-fix
+b6c69b83f079214778461d6abf63e560b0b7bdc6 refs/heads/release-zl-merge
+f264faeae22433b5a085be236b6319704788ad78 refs/heads/release-zr
+ff205f75aad6a8de55141336e3339407c9029c22 refs/heads/release-zxuan
+e6ef5ada1881c1a6a7685d21e85338a05a134475 refs/heads/tmp
+ea343c9bc87d4e51bf7e213f8b4d4138b1106a43 refs/remotes/origin/master
+f264faeae22433b5a085be236b6319704788ad78 refs/remotes/origin/release
+a9b8ae790449b1badfc118e5c0608867ac1d8f7b refs/remotes/origin/release-backups
+41c252f3e9f35027686c5fb48fda5b3f345704a7 refs/remotes/origin/release-qh
+d6fbaa2fc971f744702acf3d245c6bcac05371b9 refs/remotes/origin/release-service-splitting
+bd60aa3549b146c251ada8aba54016c1eb9ae389 refs/remotes/origin/release-tree
+1d9fab901f512617756381f36573d8dc2fbaea69 refs/remotes/origin/release-tree-retrieval
+39f48f817e78e8180aa00d8d68257e9b0a410ae3 refs/remotes/origin/release-tree-zr
+9915a8da972ab2007bebf84322cbffa0718238f2 refs/remotes/origin/release-zl
+f278abc0b1e9695921ca1005f771f455e5ff8391 refs/remotes/origin/release-zl-1125
+829315ff03378d850220f6b4f8e58e9ebb85b614 refs/remotes/origin/release-zl-fix
+cd4fe0f6efa1055cd964a6b0d9dab6f30451fa5c refs/remotes/origin/release-zl-merge
+f264faeae22433b5a085be236b6319704788ad78 refs/remotes/origin/release-zr
+ff205f75aad6a8de55141336e3339407c9029c22 refs/remotes/origin/release-zxuan

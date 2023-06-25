@@ -1,0 +1,82 @@
+/* * {
+  font-size: 12px !important;
+} */
+
+.stress-testing-program-form {
+  background-color: aliceblue;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.stress-testing-program-form .ant-form-item {
+  margin-bottom: 0;
+}
+
+.stress-testing-program-container {
+  flex: 1;
+  overflow: hidden;
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.stress-testing-program-pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.ant-modal-title {
+  font-size: 16px !important;
+}
+
+/* .ant-form-item {
+  margin-bottom: 15px;
+} */
+
+.ant-input-group .ant-form-item {
+  margin-bottom: 0;
+}
+
+.stress-testing-program-container .ant-spin-nested-loading,
+.stress-testing-program-container .ant-spin-container,
+.stress-testing-program-container .ant-table-container,
+.stress-testing-program-container .ant-table.ant-table-small{
+  height: 100% !important;
+}
+
+.stress-testing-program-container .ant-table-body {
+  max-height: 100% !important;
+}
+
+.stress-testing-program-container .ant-table-body{
+  height: calc(100% - 40px) !important;
+}
+
+.stress-testing-program-container .ant-table-placeholder{
+  height: calc(100vh - 230px);
+}
+
+.ant-modal-confirm-body .ant-modal-confirm-content{
+  font-size: 14px !important;
+}
+
+.ant-modal-confirm-body > .anticon + .ant-modal-confirm-title + .ant-modal-confirm-content{
+  margin-left: 28px;
+}
+
+.stress-testing-program-modal .ant-form-item{
+  margin-bottom: 15px !important;
+}
+
+.stress-testing-program-modal .ant-form-item-control .ant-form-item{
+  margin-bottom: 0 !important;
+}
+
+.stress-testing-program-modal .ant-form-item-with-help .ant-form-item-explain{
+  min-height: auto;
+}
+
+.stress-testing-program-modal .ant-modal-title{
+  font-size: 16px !important
+}

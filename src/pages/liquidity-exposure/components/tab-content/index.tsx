@@ -1,0 +1,400 @@
+import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+import * as echarts from 'echarts/core';
+import {
+  TitleComponent,
+  GridComponent,
+  LegendComponent,
+  TooltipComponent,
+} from 'echarts/components';
+import { BarChart } from 'echarts/charts';
+import { CanvasRenderer } from 'echarts/renderers';
+
+import TableComponent from '@/components/table';
+import { format } from '@/utils/helper';
+
+import {
+  ChartContainer,
+  BlockContainer,
+  TitleContainer,
+  ContentContainer,
+  FoldText,
+  Title,
+} from './style';
+
+const column = {
+  repurchase: [
+    {
+      title: '日期',
+      dataIndex: 'delyDate',
+      key: 'delyDate',
+      width: 90,
+      align: 'center',
+    },
+    {
+      title: '品种',
+      dataIndex: 'kind',
+      key: 'kind',
+      width: 90,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'left',
+    },
+    {
+      title: '资金融入-期限',
+      dataIndex: 'inTerm',
+      key: 'inTerm',
+      width: 100,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+    },
+    {
+      title: '资金融入-利率(%)',
+      dataIndex: 'inInterestRate',
+      key: 'inInterestRate',
+      width: 120,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '资金融入-日终存量(元)',
+      dataIndex: 'inDayStock',
+      key: 'inDayStock',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '资金融出-期限',
+      dataIndex: 'outTerm',
+      key: 'outTerm',
+      width: 100,
+      align: 'right',
+    },
+    {
+      title: '资金融出-利率(%)',
+      dataIndex: 'outInterestRate',
+      key: 'outInterestRate',
+      width: 120,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '资金融出-日终存量(元)',
+      dataIndex: 'outDayStock',
+      key: 'outDayStock',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+  ],
+  flowabilityCalendar: [
+    {
+      title: '日期',
+      dataIndex: 'date',
+      key: 'date',
+      width: 90,
+      align: 'center',
+    },
+    {
+      title: '总轧差(元)',
+      dataIndex: 'netting',
+      key: 'netting',
+      width: 120,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '银行间-融入到期(元)',
+      dataIndex: 'bankInDate',
+      key: 'bankInDate',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '银行间-融出到期(元)',
+      dataIndex: 'bankOutDate',
+      key: 'bankOutDate',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '银行间-轧差(元)',
+      dataIndex: 'bankNetting',
+      key: 'bankNetting',
+      width: 120,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '上交所-融入到期(元)',
+      dataIndex: 'shInDate',
+      key: 'shInDate',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '上交所-融出到期(元)',
+      dataIndex: 'shOutDate',
+      key: 'shOutDate',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '上交所-轧差(元)',
+      dataIndex: 'shNetting',
+      key: 'shNetting',
+      width: 120,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '深交所-融入到期(元)',
+      dataIndex: 'szInDate',
+      key: 'szInDate',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '深交所-融出到期(元)',
+      dataIndex: 'szOutDate',
+      key: 'szOutDate',
+      width: 150,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+    {
+      title: '深交所-轧差(元)',
+      dataIndex: 'szNetting',
+      key: 'szNetting',
+      width: 120,
+      ellipsis: true,
+      showSorterTooltip: false,
+      align: 'right',
+      render: (value, row) => <span>{value && value !== '-' ? format(value) : value}</span>,
+    },
+  ],
+};
+
+echarts.use([
+  TitleComponent,
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+  BarChart,
+  CanvasRenderer,
+]);
+
+const TabContent = forwardRef(({ id, data, getUrl, tabCount }, ref) => {
+  const [chart, setChart] = useState(null);
+
+  useImperativeHandle(ref, () => ({
+    saveImage,
+    handleClickFold,
+  }));
+
+  useEffect(() => {
+    const chartDom = document.getElementById('chart' + id);
+    const myChart = echarts.init(chartDom);
+
+    let xAxisData = [];
+    let yAxisData = [];
+    if (data && data.flowabilityCalendarChart?.length) {
+      data.flowabilityCalendarChart.forEach(item => {
+        xAxisData.push(item.date);
+        yAxisData.push(Number(item.netting));
+      });
+    }
+
+    let option = {
+      title: {
+        text: '暂无数据',
+        x: 'center',
+        y: 'center',
+        textStyle: {
+          fontSize: 14,
+          fontWeight: 'normal',
+        },
+      },
+    };
+    if (xAxisData?.length) {
+      option = {
+        title: {
+          text: '总轧差',
+          // textVerticalAlign:'middle',
+          textAlign: 'center',
+          left: 'center',
+          textStyle: {
+            fontWeight: 'normal',
+          },
+        },
+        grid: {
+          top: 60,
+          bottom: xAxisData?.length > 10 ? 85 : 60,
+          left: '10%',
+          right: '5%',
+        },
+        legend: {
+          show: true,
+          data: ['总轧差'],
+          top: 'bottom',
+          left: 'center',
+          selectedMode: false,
+        },
+        xAxis: {
+          type: 'category',
+          axisTick: {
+            // alignWithLabel:true,
+            interval: 0,
+          },
+          axisLabel: {
+            showMaxLabel: true,
+            interval: 0,
+            rotate: xAxisData?.length > 10 ? 45 : 0,
+            margin: 10,
+          },
+          data: xAxisData,
+        },
+        yAxis: {
+          type: 'value',
+          name: '元',
+          // nameLocation: 'middle',
+          // nameGap: 70,
+          nameTextStyle: {
+            align: 'right',
+            color: '#5470c6',
+          },
+        },
+        series: [
+          {
+            name: '总轧差',
+            data: yAxisData,
+            type: 'bar',
+          },
+        ],
+        tooltip: {
+          show: true,
+          trigger: 'item',
+          formatter: function(data) {
+            const valueY = data?.value && data.value !== '-' ? format(data.value) : data.value;
+            return (
+              data.seriesName + '<br />' + '日期：' + +data.name + '<br />' + '指标值：' + valueY
+            );
+          },
+        },
+      };
+    }
+
+    option && myChart.setOption(option);
+    setChart(myChart);
+  }, [id, tabCount]);
+
+  const [isFoldFlowabilityCalendar, setIsFoldFlowabilityCalendar] = useState(false);
+  const [isFoldRepurchase, setIsFoldRepurchase] = useState(false);
+
+  const handleClickFold = (key?: string) => {
+    if (key === 'repurchase') {
+      setIsFoldRepurchase(!isFoldRepurchase);
+    } else if (key === 'flowabilityCalendar') {
+      setIsFoldFlowabilityCalendar(!isFoldFlowabilityCalendar);
+    } else {
+      setIsFoldRepurchase(false);
+      setIsFoldFlowabilityCalendar(false);
+    }
+  };
+
+  const saveImage = () => {
+    if (chart) {
+      const url = chart.getDataURL({
+        pixelRatio: 2,
+        backgroundColor: '#fff',
+      });
+
+      getUrl && getUrl(url);
+    }
+  };
+
+  return (
+    <div key={id}>
+      <BlockContainer>
+        <TitleContainer>
+          <Title>回购明细</Title>
+          <FoldText onClick={() => handleClickFold('repurchase')}>
+            {isFoldRepurchase ? '展开' : '收起'}
+          </FoldText>
+        </TitleContainer>
+
+        <ContentContainer isFold={isFoldRepurchase}>
+          <TableComponent
+            bordered={true}
+            columns={column.repurchase}
+            dataSource={data.repurchaseList}
+            pagination={false}
+            // scroll={{ x: 'max-content', y: height ? height : 'calc(100vh - 220px)' }}
+            // scroll={{ x: '100%', y: '300px' }}
+            scroll={{ x: '100%' }}
+            size="small"
+            // loading={loading}
+            rowKey={(record: any) => record.id}
+          />
+        </ContentContainer>
+      </BlockContainer>
+      <div>
+        <TitleContainer>
+          <Title>流动性日历</Title>
+          <FoldText onClick={() => handleClickFold('flowabilityCalendar')}>
+            {isFoldFlowabilityCalendar ? '展开' : '收起'}
+          </FoldText>
+        </TitleContainer>
+
+        <ContentContainer isFold={isFoldFlowabilityCalendar}>
+          <TableComponent
+            bordered={true}
+            columns={column.flowabilityCalendar}
+            dataSource={data.flowabilityCalendarList}
+            pagination={false}
+            // scroll={{ x: 'max-content', y: height ? height : 'calc(100vh - 220px)' }}
+            scroll={{ x: '100%' }}
+            size="small"
+            // loading={loading}
+            rowKey={(record: any) => record.id}
+          />
+          <ChartContainer id={'chart' + id}></ChartContainer>
+        </ContentContainer>
+      </div>
+    </div>
+  );
+});
+
+export default TabContent;

@@ -1,0 +1,50 @@
+.email-body {
+	flex: 1;
+	overflow: hidden;
+	display: flex;
+	margin-top: 5px;
+}
+
+.early-warning-email-left {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+}
+
+.early-warning-email-table {
+	flex: 1;
+	overflow: hidden;
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.early-warning-email-pagination {
+	display: flex;
+	justify-content: flex-end;
+	padding: 5px;
+}
+
+.early-warning-email-form .ant-form-item {
+	margin-bottom: 10px;
+}
+
+.early-warning-email-form .ant-select-selection-placeholder,
+.early-warning-email-form label,
+.early-warning-email-form input,
+.early-warning-email-form input::placeholder {
+	font-size: 12px !important;
+}
+
+.early-warning-email-table .ant-table-body {
+	min-height: calc(100vh - 265px) !important;
+}
+
+.early-warning-email-table .ant-table-placeholder {
+	height: calc(100vh - 265px);
+}
+
+.email-debounce-select {
+	width: 240px !important;
+}

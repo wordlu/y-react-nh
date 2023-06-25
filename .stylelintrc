@@ -1,0 +1,18 @@
+{
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
+  "extends": "stylelint-config-standard",
+  "syntax": "scss",
+  "rules": {
+    "no-empty-source": null,
+    "declaration-block-semicolon-newline-after": null,
+    "no-eol-whitespace": null,
+    "rule-empty-line-before": null,
+    "font-family-no-missing-generic-family-keyword":null,
+    "color-hex-length":null,
+    "declaration-colon-newline-after":null,
+    "no-descending-specificity":null,
+    "declaration-colon-space-after":null
+  }
+}

@@ -1,0 +1,15 @@
+.sql-text, .tree-area {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  height: 50vh;
+  overflow: auto;
+}
+
+.ant-modal-body {
+  padding-bottom: 24px !important;
+}
+
+.add-sql-area {
+  display: flex;
+  width: 100%;
+}

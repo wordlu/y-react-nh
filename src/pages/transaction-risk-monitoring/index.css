@@ -1,0 +1,61 @@
+/* *{
+  font-size: 12px !important;
+} */
+
+.financing-repurchase-form{
+  padding-top: 10px;
+  /* padding-bottom: 10px; */
+  background: aliceblue;
+  margin-bottom: 5px;
+}
+
+.financing-repurchase-form .ant-form-item{
+  margin-bottom: 10px;
+}
+
+.financing-repurchase-form .ant-picker, .financing-repurchase-form .ant-form-item-control-input-content{
+  height: 100% !important;
+}
+
+.financing-repurchase-container{
+  display: flex;
+  flex:1;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.financing-repurchase-container .ant-spin-nested-loading,
+.financing-repurchase-container .ant-spin-container,
+.financing-repurchase-container .ant-table-container,
+.financing-repurchase-container .ant-table.ant-table-small
+/* .financing-repurchase-container table  */
+{
+  height: 100% !important;
+}
+
+.financing-repurchase-container .ant-table-body {
+  max-height: 100% !important;
+}
+
+.financing-repurchase-container .ant-table-body{
+  height: calc(100% - 40px) !important;
+}
+
+.financing-repurchase-container .ant-table-placeholder{
+  height: calc(100vh - 210px);
+}
+
+/* .financing-repurchase-container .ant-table-row td{
+  height: 30px !important;
+}
+
+.financing-repurchase-container .ant-table-measure-row tr{
+  height: 0 !important;
+} */
+
+.financing-repurchase-pagination{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px;
+}

@@ -1,0 +1,16 @@
+/* * {
+  font-size: 12px !important;
+} */
+
+.liquidity-exposure-tab-loading {
+  display: flex;
+}
+
+#tree .tree {
+  height: 100%;
+  overflow: auto;
+}
+
+#tree .ant-tree-node-content-wrapper {
+  white-space: nowrap;
+}

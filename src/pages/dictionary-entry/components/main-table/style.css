@@ -1,0 +1,27 @@
+ant-table-thead > tr > th{
+  white-space:nowrap;
+}
+.ant-table-cell{
+  white-space:nowrap;
+}
+
+.dic-opt-btn {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 40px;
+}
+
+.dic-opt-btn .ant-breadcrumb {
+  width: 200px;
+}
+
+.dic-opt-btn .ant-btn > span {
+  font-size: 12px;
+}
+
+.ant-spin-container .ant-table {
+  margin-top: 0px !important;
+  margin-bottom: 2px !important; 
+}

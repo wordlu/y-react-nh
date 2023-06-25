@@ -1,0 +1,17 @@
+.user-auth-export-excel {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px !important;
+  height: 48px !important;
+}
+
+.user-auth-export-excel .ant-breadcrumb {
+  width: 200px;
+  font-size: 12px;
+}
+
+.user-auth-export-excel .ant-btn > span {
+  font-size: 12px;
+}

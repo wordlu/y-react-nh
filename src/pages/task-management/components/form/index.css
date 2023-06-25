@@ -1,0 +1,19 @@
+/* * {
+  font-size: 12px !important;
+} */
+
+.task-manage .ant-form-item-label>label{
+  font-size: 12px !important;
+}
+
+.task-manage .ant-select, .task-manage .ant-btn > span {
+  font-size: 12px;
+}
+
+.task-manage .ant-form-item{
+  margin-top: 2px !important;
+  margin-bottom: 5px !important;
+}
+
+
+

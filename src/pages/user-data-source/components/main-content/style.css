@@ -1,0 +1,51 @@
+.source-sql-text, .source-tree-area {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.ant-modal-body {
+  padding-bottom: 24px !important;
+}
+
+.opt-form {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.titles {
+  width: 100%;
+  display: flex;
+}
+
+.datasource-sel {
+  width: 160px !important;
+  margin-right: 20px;
+}
+
+.ant-btn {
+  margin-right: 10px;
+}
+
+.ant-row {
+  flex-flow: row nowrap;
+}
+
+.source-btn-area {
+  display: flex;
+  margin-left: 10px;
+}
+.model-form .ant-form-item {
+  margin-bottom: 10px;
+}
+
+.sql-area {
+  display: flex;
+  width: 100%;
+}
+
+.data-columns {
+  min-width: 100px;
+}
